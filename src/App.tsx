@@ -16,10 +16,9 @@ function App() {
     return Array.isArray(data.message) ? data.message : [];
   }
 
-  function reloadImages(breed: string) {
-    fetchImages(breed).then((urls) => {
-      setUrls(urls);
-    });
+  async function reloadImages(breed: string) {
+    const urls = await fetchImages(breed);
+    setUrls(urls);
   }
 
   const breedsList = [
